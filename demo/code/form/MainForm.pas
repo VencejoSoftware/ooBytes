@@ -5,7 +5,7 @@ interface
 uses
   Windows, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, ExtCtrls, StdCtrls,
-  ooBytes, ooBytes.Convert, ooBytes.AsString;
+  ooBytes, ooBytes.Scale, ooBytes.StringOfBytes;
 
 type
   TMainForm = class(TForm)
@@ -38,7 +38,7 @@ function FileSize(const Filename: string): int64;
 var
   Info: TWin32FileAttributeData;
 begin
-  Result := -1;
+  Result := - 1;
 {$IFDEF FPC}
   if GetFileAttributesEx(PChar(Filename), GetFileExInfoStandard, @Info) then
     Result := int64(Info.nFileSizeLow) or int64(Info.nFileSizeHigh shl 32);
@@ -64,7 +64,7 @@ procedure TMainForm.Timer1Timer(Sender: TObject);
 var
   StringList: TStringList;
   Bytes: IBytes;
-  BytesConvert: IBytesConvert;
+  BytesScale: IBytesScale;
 begin
   StringList := TStringList.Create;
   try
@@ -72,9 +72,9 @@ begin
       StringList.LoadFromFile(FileNameTest);
     StringList.Append('Some loooooooooonnnnnnnggg text line! To increase file sizs');
     Bytes := TBytes.New(FileSize(FileNameTest));
-    BytesConvert := TBytesConvert.New(Bytes);
-    Caption := TBytesAsString.New(BytesConvert).Build + '  ' +
-      TBytesAsString.New(BytesConvert).BuildAsType(scMB);
+    BytesScale := TBytesScale.New(Bytes);
+    Caption := TStringOfBytes.New(BytesScale).Build(BytesScale.FitScaleUnit) + '  ' + TStringOfBytes.New(BytesScale)
+      .Build(MB);
     StringList.SaveToFile(FileNameTest);
   finally
     StringList.Free;

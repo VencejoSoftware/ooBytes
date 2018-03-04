@@ -7,9 +7,9 @@ program test;
 
 uses
   ooRunTest,
-  ooBytes.AsString_test in '..\code\ooBytes.AsString_test.pas',
-  ooBytes.IntToByte_test in '..\code\ooBytes.IntToByte_test.pas',
-  ooBytes.Convert_test in '..\code\ooBytes.Convert_test.pas';
+  ooBytes.StringOfBytes_test in '..\code\ooBytes.StringOfBytes_test.pas',
+  ooBytes.Scale_test in '..\code\ooBytes.Scale_test.pas',
+  ooBytes.ByteFromInteger_test in '..\code\ooBytes.ByteFromInteger_test.pas';
 
 {R *.RES}
 
