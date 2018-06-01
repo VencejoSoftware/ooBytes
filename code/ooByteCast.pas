@@ -1,6 +1,6 @@
 {$REGION 'documentation'}
 {
-  Copyright (c) 2016, Vencejo Software
+  Copyright (c) 2018, Vencejo Software
   Distributed under the terms of the Modified BSD License
   The full license is distributed with this software
 }
@@ -10,7 +10,7 @@
   @author Vencejo Software <www.vencejosoft.com>
 }
 {$ENDREGION}
-unit ooBytes.ByteFromInteger;
+unit ooByteCast;
 
 interface
 
@@ -21,15 +21,15 @@ type
   @member(Value Byte representation)
 }
 {$ENDREGION}
-  IByteFromInteger = interface
+  IByteCast = interface
     ['{1321FEEE-BEC0-44F8-A9D0-259893984898}']
     function Value: Byte;
   end;
 
 {$REGION 'documentation'}
 {
-  @abstract(Implementation of @link(IByteFromInteger))
-  @member(Value @seealso(IByteFromInteger.Value))
+  @abstract(Implementation of @link(IByteCast))
+  @member(Value @seealso(IByteCast.Value))
   @member(
     Create Object constructor
     @param(Source Integer value)
@@ -41,14 +41,14 @@ type
 }
 {$ENDREGION}
 
-  TByteFromInteger = class(TInterfacedObject, IByteFromInteger)
+  TByteFromInteger = class sealed(TInterfacedObject, IByteCast)
   strict private
     _Value: Byte;
     function RangeByte(const Source: Integer): Byte;
   public
     function Value: Byte;
     constructor Create(const Source: Integer);
-    class function New(const Source: Integer): IByteFromInteger;
+    class function New(const Source: Integer): IByteCast;
   end;
 
 implementation
@@ -89,7 +89,7 @@ begin
   _Value := RangeByte(Source);
 end;
 
-class function TByteFromInteger.New(const Source: Integer): IByteFromInteger;
+class function TByteFromInteger.New(const Source: Integer): IByteCast;
 begin
   Result := TByteFromInteger.Create(Source);
 end;

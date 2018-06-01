@@ -116,23 +116,39 @@
         <PackageName Value="LCL"/>
       </Item3>
     </RequiredPackages>
-    <Units Count="4">
+    <Units Count="8">
       <Unit0>
         <Filename Value="test.lpr"/>
         <IsPartOfProject Value="True"/>
       </Unit0>
       <Unit1>
-        <Filename Value="..\code\ooBytes.AsString_test.pas"/>
+        <Filename Value="..\code\ooBytes.ByteFromInteger_test.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit1>
       <Unit2>
-        <Filename Value="..\code\ooBytes.Convert_test.pas"/>
+        <Filename Value="..\code\ooBytesScale_test.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit2>
       <Unit3>
-        <Filename Value="..\code\ooBytes.IntToByte_test.pas"/>
+        <Filename Value="..\code\ooBytesText_test.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit3>
+      <Unit4>
+        <Filename Value="..\..\code\ooByteCast.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="..\..\code\ooBytes.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="..\..\code\ooBytesScale.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="..\..\code\ooBytesText.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit7>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

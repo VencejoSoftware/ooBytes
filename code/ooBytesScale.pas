@@ -1,6 +1,6 @@
 {$REGION 'documentation'}
 {
-  Copyright (c) 2016, Vencejo Software
+  Copyright (c) 2018, Vencejo Software
   Distributed under the terms of the Modified BSD License
   The full license is distributed with this software
 }
@@ -10,7 +10,7 @@
   @author Vencejo Software <www.vencejosoft.com>
 }
 {$ENDREGION}
-unit ooBytes.Scale;
+unit ooBytesScale;
 
 interface
 
@@ -39,8 +39,8 @@ type
 {
   @abstract(Bytes scale cast object)
   @member(
-    ToScaleUnit Cast bytes to scale unit
-    @param(ScaleUnit Scale unit kind to scale)
+    ScaleOf Cast bytes to scale unit
+    @param(Units Scale unit kind to scale)
     @return(Double value in the bytes size scale)
   )
   @member(FitScaleUnit Automatic find scale unit)
@@ -49,7 +49,7 @@ type
 
   IBytesScale = interface(IBytes)
     ['{554430DF-59D1-4B1E-8A09-082CA6B066F8}']
-    function ToScaleUnit(const ScaleUnit: TBytesScaleUnit): Extended;
+    function ScaleOf(const Units: TBytesScaleUnit): Extended;
     function FitScaleUnit: TBytesScaleUnit;
   end;
 
@@ -57,7 +57,7 @@ type
 {
   @abstract(Implementation of @link(IBytesScale))
   @member(Size @seealso(IBytes.Size))
-  @member(ToScaleUnit @seealso(IBytesScale.ToScaleUnit))
+  @member(ScaleOf @seealso(IBytesScale.ScaleOf))
   @member(FitScaleUnit @seealso(IBytesScale.FitScaleUnit))
   @member(
     Create Object constructor
@@ -70,12 +70,12 @@ type
 }
 {$ENDREGION}
 
-  TBytesScale = class(TInterfacedObject, IBytesScale)
+  TBytesScale = class sealed(TInterfacedObject, IBytesScale)
   strict private
     _Bytes: IBytes;
   public
     function Size: Extended;
-    function ToScaleUnit(const ScaleUnit: TBytesScaleUnit): Extended;
+    function ScaleOf(const Units: TBytesScaleUnit): Extended;
     function FitScaleUnit: TBytesScaleUnit;
     constructor Create(const Bytes: IBytes);
     class function New(const Bytes: IBytes): IBytesScale;
@@ -95,9 +95,9 @@ begin
       Break;
 end;
 
-function TBytesScale.ToScaleUnit(const ScaleUnit: TBytesScaleUnit): Extended;
+function TBytesScale.ScaleOf(const Units: TBytesScaleUnit): Extended;
 begin
-  Result := Size / IntPower(1024, Ord(ScaleUnit));
+  Result := Size / IntPower(1024, Ord(Units));
 end;
 
 constructor TBytesScale.Create(const Bytes: IBytes);

@@ -1,7 +1,7 @@
 object MainForm: TMainForm
   Left = 0
   Top = 0
-  Caption = 'Form2'
+  Caption = 'Demo'
   ClientHeight = 202
   ClientWidth = 447
   Color = clBtnFace
@@ -11,6 +11,7 @@ object MainForm: TMainForm
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poScreenCenter
   OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 13

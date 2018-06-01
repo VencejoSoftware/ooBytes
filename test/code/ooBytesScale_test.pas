@@ -1,16 +1,16 @@
 {
-  Copyright (c) 2016, Vencejo Software
+  Copyright (c) 2018, Vencejo Software
   Distributed under the terms of the Modified BSD License
   The full license is distributed with this software
 }
-unit ooBytes.Scale_test;
+unit ooBytesScale_test;
 
 interface
 
 uses
   SysUtils,
   Math,
-  ooBytes, ooBytes.Scale,
+  ooBytes, ooBytesScale,
 {$IFDEF FPC}
   fpcunit, testregistry
 {$ELSE}

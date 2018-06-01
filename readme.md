@@ -1,7 +1,20 @@
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+[![Build Status](https://travis-ci.org/VencejoSoftware/ooBytes.svg?branch=master)](https://travis-ci.org/VencejoSoftware/ooBytes)
 
 # ooBytes - Object pascal bytes library
 Library to formatting or converting bytes in different measures units
+
+### Example of a set, scale and format
+```pascal
+var
+  Bytes: IBytes;
+  BytesScale: IBytesScale;
+begin
+  Bytes := TBytes.New(1024);
+  BytesScale := TBytesScale.New(Bytes);
+  ShowMessage(TBytesText.New(BytesScale).Build(BytesScale.FitScaleUnit));
+end;
+```
 
 ### Documentation
 If not exists folder "code-documentation" then run the batch "build_doc". The main entry is ./doc/index.html

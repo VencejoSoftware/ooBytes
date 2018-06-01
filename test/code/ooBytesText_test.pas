@@ -1,15 +1,15 @@
 {
-  Copyright (c) 2016, Vencejo Software
+  Copyright (c) 2018, Vencejo Software
   Distributed under the terms of the Modified BSD License
   The full license is distributed with this software
 }
-unit ooBytes.StringOfBytes_test;
+unit ooBytesText_test;
 
 interface
 
 uses
   SysUtils,
-  ooBytes.StringOfBytes, ooBytes, ooBytes.Scale,
+  ooBytes, ooBytesScale, ooBytesText,
 {$IFDEF FPC}
   fpcunit, testregistry
 {$ELSE}
@@ -27,12 +27,12 @@ implementation
 
 procedure TStringOfBytesTest.BuildToScaleUnitMBOf6000Bytes;
 begin
-  CheckEquals(Format('%n MB', [0.01]), TStringOfBytes.New(TBytesScale.New(TBytes.New(6000))).Build(MB));
+  CheckEquals(Format('%n MB', [0.01]), TBytesText.New(TBytesScale.New(TBytes.New(6000))).Build(MB));
 end;
 
 procedure TStringOfBytesTest.BuildOf1024Bytes;
 begin
-  CheckEquals(Format('%n KB', [1.00]), TStringOfBytes.New(TBytesScale.New(TBytes.New(1024))).Build(KB));
+  CheckEquals(Format('%n KB', [1.00]), TBytesText.New(TBytesScale.New(TBytes.New(1024))).Build(KB));
 end;
 
 initialization

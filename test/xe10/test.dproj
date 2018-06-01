@@ -4,7 +4,7 @@
         <MainSource>test.dpr</MainSource>
         <Config Condition="'$(Config)'==''">Debug</Config>
         <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
-        <ProjectVersion>18.3</ProjectVersion>
+        <ProjectVersion>18.4</ProjectVersion>
         <Base>True</Base>
         <TargetedPlatforms>1</TargetedPlatforms>
         <AppType>Console</AppType>
@@ -82,9 +82,13 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\code\ooBytes.StringOfBytes_test.pas"/>
-        <DCCReference Include="..\code\ooBytes.Scale_test.pas"/>
+        <DCCReference Include="..\code\ooBytesText_test.pas"/>
+        <DCCReference Include="..\code\ooBytesScale_test.pas"/>
         <DCCReference Include="..\code\ooBytes.ByteFromInteger_test.pas"/>
+        <DCCReference Include="..\..\code\ooByteCast.pas"/>
+        <DCCReference Include="..\..\code\ooBytesText.pas"/>
+        <DCCReference Include="..\..\code\ooBytes.pas"/>
+        <DCCReference Include="..\..\code\ooBytesScale.pas"/>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -154,14 +158,20 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\build\debug\test.exe" Configuration="Debug" Class="ProjectOutput"/>
-                <DeployFile LocalName="$(BDS)\Redist\iossim32\libcgunwind.1.0.dylib" Class="DependencyModule"/>
-                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
-                    <Platform Name="iOSSimulator">
+                <DeployFile LocalName="..\build\debug\test.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>test.exe</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="$(BDS)\Redist\iossimulator\libPCRE.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\build\debug\test.exe" Configuration="Debug" Class="ProjectOutput"/>
+                <DeployFile LocalName="$(BDS)\Redist\iossim32\libcgunwind.1.0.dylib" Class="DependencyModule"/>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
                     <Platform Name="iOSSimulator">
                         <Overwrite>true</Overwrite>
                     </Platform>

@@ -5,7 +5,7 @@ interface
 uses
   Windows, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, ExtCtrls, StdCtrls,
-  ooBytes, ooBytes.Scale, ooBytes.StringOfBytes;
+  ooBytes, ooBytesScale, ooByteCast, ooBytesText;
 
 type
   TMainForm = class(TForm)
@@ -73,8 +73,7 @@ begin
     StringList.Append('Some loooooooooonnnnnnnggg text line! To increase file sizs');
     Bytes := TBytes.New(FileSize(FileNameTest));
     BytesScale := TBytesScale.New(Bytes);
-    Caption := TStringOfBytes.New(BytesScale).Build(BytesScale.FitScaleUnit) + '  ' + TStringOfBytes.New(BytesScale)
-      .Build(MB);
+    Caption := TBytesText.New(BytesScale).Build(BytesScale.FitScaleUnit) + '  ' + TBytesText.New(BytesScale).Build(MB);
     StringList.SaveToFile(FileNameTest);
   finally
     StringList.Free;
