@@ -6,14 +6,14 @@
 program test;
 
 uses
-  ooRunTest,
-  ooBytesText_test in '..\code\ooBytesText_test.pas',
-  ooBytesScale_test in '..\code\ooBytesScale_test.pas',
-  ooBytes.ByteFromInteger_test in '..\code\ooBytes.ByteFromInteger_test.pas',
-  ooByteCast in '..\..\code\ooByteCast.pas',
-  ooBytesText in '..\..\code\ooBytesText.pas',
-  ooBytes in '..\..\code\ooBytes.pas',
-  ooBytesScale in '..\..\code\ooBytesScale.pas';
+  RunTest,
+  ByteCast in '..\..\code\ByteCast.pas',
+  BytesText in '..\..\code\BytesText.pas',
+  Bytes in '..\..\code\Bytes.pas',
+  BytesScale in '..\..\code\BytesScale.pas',
+  BytesByteFromInteger_test in '..\code\BytesByteFromInteger_test.pas',
+  BytesScale_test in '..\code\BytesScale_test.pas',
+  BytesText_test in '..\code\BytesText_test.pas';
 
 {R *.RES}
 

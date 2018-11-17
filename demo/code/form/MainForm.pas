@@ -5,7 +5,7 @@ interface
 uses
   Windows, SysUtils, Classes, Graphics, Controls, Forms,
   Dialogs, ExtCtrls, StdCtrls,
-  ooBytes, ooBytesScale, ooByteCast, ooBytesText;
+  Bytes, BytesScale, ByteCast, BytesText;
 
 type
   TMainForm = class(TForm)

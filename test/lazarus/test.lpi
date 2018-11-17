@@ -122,31 +122,31 @@
         <IsPartOfProject Value="True"/>
       </Unit0>
       <Unit1>
-        <Filename Value="..\code\ooBytes.ByteFromInteger_test.pas"/>
+        <Filename Value="..\code\BytesByteFromInteger_test.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit1>
       <Unit2>
-        <Filename Value="..\code\ooBytesScale_test.pas"/>
+        <Filename Value="..\code\BytesScale_test.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit2>
       <Unit3>
-        <Filename Value="..\code\ooBytesText_test.pas"/>
+        <Filename Value="..\code\BytesText_test.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit3>
       <Unit4>
-        <Filename Value="..\..\code\ooByteCast.pas"/>
+        <Filename Value="..\..\code\ByteCast.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit4>
       <Unit5>
-        <Filename Value="..\..\code\ooBytes.pas"/>
+        <Filename Value="..\..\code\Bytes.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit5>
       <Unit6>
-        <Filename Value="..\..\code\ooBytesScale.pas"/>
+        <Filename Value="..\..\code\BytesScale.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit6>
       <Unit7>
-        <Filename Value="..\..\code\ooBytesText.pas"/>
+        <Filename Value="..\..\code\BytesText.pas"/>
         <IsPartOfProject Value="True"/>
       </Unit7>
     </Units>

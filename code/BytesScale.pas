@@ -10,13 +10,13 @@
   @author Vencejo Software <www.vencejosoft.com>
 }
 {$ENDREGION}
-unit ooBytesScale;
+unit BytesScale;
 
 interface
 
 uses
   Math,
-  ooBytes;
+  Bytes;
 
 type
 {$REGION 'documentation'}
@@ -33,7 +33,7 @@ type
   @value YB Yottabyte scale
 }
 {$ENDREGION}
-  TBytesScaleUnit = (Bytes, KB, MB, GB, TB, PB, EB, ZB, YB);
+  TBytesScaleUnit = (Byte, KB, MB, GB, TB, PB, EB, ZB, YB);
 
 {$REGION 'documentation'}
 {

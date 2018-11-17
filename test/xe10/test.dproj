@@ -82,13 +82,13 @@
         <DelphiCompile Include="$(MainSource)">
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
-        <DCCReference Include="..\code\ooBytesText_test.pas"/>
-        <DCCReference Include="..\code\ooBytesScale_test.pas"/>
-        <DCCReference Include="..\code\ooBytes.ByteFromInteger_test.pas"/>
-        <DCCReference Include="..\..\code\ooByteCast.pas"/>
-        <DCCReference Include="..\..\code\ooBytesText.pas"/>
-        <DCCReference Include="..\..\code\ooBytes.pas"/>
-        <DCCReference Include="..\..\code\ooBytesScale.pas"/>
+        <DCCReference Include="..\..\code\ByteCast.pas"/>
+        <DCCReference Include="..\..\code\BytesText.pas"/>
+        <DCCReference Include="..\..\code\Bytes.pas"/>
+        <DCCReference Include="..\..\code\BytesScale.pas"/>
+        <DCCReference Include="..\code\BytesByteFromInteger_test.pas"/>
+        <DCCReference Include="..\code\BytesScale_test.pas"/>
+        <DCCReference Include="..\code\BytesText_test.pas"/>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
