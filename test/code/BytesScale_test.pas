@@ -3,14 +3,14 @@
   Distributed under the terms of the Modified BSD License
   The full license is distributed with this software
 }
-unit ooBytesScale_test;
+unit BytesScale_test;
 
 interface
 
 uses
   SysUtils,
   Math,
-  ooBytes, ooBytesScale,
+  Bytes, BytesScale,
 {$IFDEF FPC}
   fpcunit, testregistry
 {$ELSE}
@@ -35,7 +35,7 @@ implementation
 
 procedure TBytesScaleTest.BytesFit;
 begin
-  CheckTrue(Bytes = TBytesScale.New(TBytes.New((Power(1024, Ord(Bytes))))).FitScaleUnit);
+  CheckTrue(Byte = TBytesScale.New(TBytes.New((Power(1024, Ord(Byte))))).FitScaleUnit);
 end;
 
 procedure TBytesScaleTest.KBFit;

@@ -10,13 +10,13 @@
   @author Vencejo Software <www.vencejosoft.com>
 }
 {$ENDREGION}
-unit ooBytesText;
+unit BytesText;
 
 interface
 
 uses
   SysUtils,
-  ooBytesScale;
+  BytesScale;
 
 type
 {$REGION 'documentation'}
@@ -62,7 +62,7 @@ implementation
 
 function TBytesText.Build(const Scale: TBytesScaleUnit): String;
 const
-  SIZE_TYPE: array [TBytesScaleUnit] of string = ('Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
+  SIZE_TYPE: array [TBytesScaleUnit] of string = ('Byte', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');
 begin
   Result := Format('%n %s', [_BytesScale.ScaleOf(Scale), SIZE_TYPE[Scale]]);
 end;
